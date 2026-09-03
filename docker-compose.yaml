@@ -1,0 +1,20 @@
+# docker-compose.yml
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: fundraiser-postgres
+
+    environment:
+      POSTGRES_USER: fundraiser
+      POSTGRES_PASSWORD: fundraiser
+      POSTGRES_DB: fundraiser
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - fundraiser_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  fundraiser_postgres_data:
