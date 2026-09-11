@@ -14,6 +14,7 @@ class Organization(Base):
     name: Mapped[str] = mapped_column(
         String(255),
         nullable=False,
+        unique=True
     )
 
     created_at: Mapped[datetime] = mapped_column(
