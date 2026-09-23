@@ -1,8 +1,8 @@
-from app.db.models.organization import Organization
-from app.db.models.fundraiser import Fundraiser
-from app.db.models.products import Product
-from app.db.models.fundraiserproduct import FundraiserProduct
-from app.db.models.expenses import Expenses
+from db.models.organization import Organization
+from db.models.fundraiser import Fundraiser
+from db.models.products import Product
+from db.models.fundraiserproduct import FundraiserProduct
+from db.models.expenses import Expenses
 
 __all__ = (
     "Organization",

@@ -5,7 +5,7 @@ from decimal import Decimal
 from sqlalchemy import DateTime, ForeignKey, Numeric, String, func
 from sqlalchemy.orm import Mapped, mapped_column
 
-from app.db.base import Base
+from db.base import Base
 
 class Expenses(Base):
     __tablename__ = "expenses"

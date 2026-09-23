@@ -1,6 +1,6 @@
-from app.db.session import SessionLocal
+from sqlalchemy.engine.reflection import ObjectScope
 from app.db.models import *
-
+from app.db.session import SessionLocal
 from decimal import Decimal
 from datetime import date
 
@@ -8,7 +8,7 @@ from sqlalchemy import select
 
 db = SessionLocal()
 
-def add_item(model) -> bool:
+def add_item(db, model) -> bool:
     try:
         db.add(model)
         db.commit()
@@ -18,10 +18,10 @@ def add_item(model) -> bool:
         raise  
     return True
 
-def remove_item(model) -> bool:
+def remove_item(db, model) -> bool:
     return False
 
-def edit_item(model) -> bool:
+def edit_item(db, model) -> bool:
     return False
 
 new_product = Product(
@@ -43,4 +43,4 @@ new_expense = Expenses(
     amount = Decimal(70.82),
     category = "Food"
 )
-add_item(new_expense)
+add_item(db, new_expense)
