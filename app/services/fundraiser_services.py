@@ -1,4 +1,4 @@
-from app.db.models import *
+from db.models import *
 
 from sqlalchemy import select
 
@@ -83,5 +83,4 @@ def fundraiser_summary_org(db, org_name: str) -> dict:
         fundraiser["profits"] = revenue - total_expenses
         res["fundraisers"].append(fundraiser)
 
-    print(res)
     return res
